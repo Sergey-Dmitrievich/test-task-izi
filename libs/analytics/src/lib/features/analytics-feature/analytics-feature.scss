@@ -1,0 +1,217 @@
+.main {
+
+  margin-left: 47px;
+  .sidebar {
+    white-space: nowrap;
+    margin-top: 35px;
+    display: flex;
+    flex-direction: row;
+
+    .title {
+      font-size: 25px;
+      color: var(--gray-color);
+      align-self: flex-end;
+      font-family: 'Exo 2 SemiBold';
+    }
+  }
+
+  .filters {
+    margin-left: 244px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    color: var(--gray-color);
+
+    .addTransaction {
+      padding: 8px 17px 8px 17px;
+      background-color: var(--primary-color);
+      border-radius: 10px;
+      color: var(--dark-color);
+    }
+
+    .otData {
+      padding: 8px 17px 8px 17px;
+      background-color: var(--light-gray);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .doData {
+      padding: 8px 17px 8px 17px;
+      background-color: var(--light-gray);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .see {
+      padding: 8px 17px 8px 17px;
+      background-color: var(--gray-color);
+      border-radius: 10px;
+      color: var(--light-color);
+    }
+  }
+
+  .export {
+    display: flex;
+    flex-direction: row;
+    margin-left: 39px;
+    gap: 5px;
+    color: var(--gray-color);
+
+    img{
+      margin-right: 8.38px;
+    }
+
+    .pdf {
+      padding: 8px 17px 8px 17px;
+      background-color: var(--light-gray);
+    }
+
+    .excel {
+      padding: 8px 17px 8px 17px;
+      background-color: var(--light-gray);
+    }
+  }
+
+  .middle {
+    margin-top: 33px;
+    white-space: nowrap;
+    table {
+      table-layout: fixed;
+      max-width: 100%;
+      border-collapse: collapse;
+
+    }
+    .item{
+      img{
+        margin-left: 8px;
+      }
+    }
+    thead, tr, th {
+      padding: 0px 33px 16.5px 0px;
+      text-align: left;
+      font-weight: normal;
+
+      // Применяем отступ и к заголовку
+      &.prime-left {
+        padding-left: 120px;
+        text-align: left; // Выравнивание по правому краю
+      }
+      &.middle-left{
+        padding-left: 20px;
+        text-align: left;
+      }
+    }
+
+
+    tr {
+      border-bottom: 0.5px dashed var(--gray-color);
+      color: var(--gray-color);
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    td {
+      padding: 16.5px 33px 16.5px 0px;
+      color: var(--dark-color);
+      border-bottom: 0.5px dashed var(--gray-color);
+      width: fit-content;
+      max-width: 100%;
+
+      &.prime-left {
+        padding-left: 120px;
+        text-align: left;
+      }
+      &.middle-left{
+        padding-left: 20px;
+        text-align: left;
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: row;
+    img{
+      height: 8px;
+      width: 4px;
+    }
+    .number-of-pages {
+      margin-left: 507px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: #5052584D;
+    }
+    .left-icons {
+      display: flex;
+      flex-direction: row;
+      gap: 26px;
+      margin-left: 131px;
+    }
+    .two-left-icons {
+      gap: 31px;
+    }
+    .one-left-icons {
+      gap: 31px;
+    }
+    .pages {
+      margin-left: 30px;
+      margin-right: 30px;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      color: #5052584D;
+      .primary{
+        color: #505258CC;
+      }
+
+    }
+    .right-icons {
+      display: flex;
+      flex-direction: row;
+      gap: 26px;
+    }
+    .two-right-icons {
+    }
+    .one-right-icons {
+    }
+    .number-of-entries {
+    }
+  }
+
+
+
+
+
+
+  //  Дополнительно
+  input, select {
+    width: 100%;
+    max-width: 100%;
+    height: 18px;
+    padding: 0px 0px;
+    border: none;
+    border-bottom: 1px solid var(--dark-color);
+    background-color: transparent;
+    font-size: 18px;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+  }
+  input[type="date"] {
+    width: 100%;
+  }
+  input[type="number"] {
+    text-align: right;
+  }
+
+}

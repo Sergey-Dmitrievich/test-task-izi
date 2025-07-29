@@ -1,0 +1,27 @@
+:root{
+  --dark-color: #505258;
+  --gray-color: #A2ACB7;
+  --light-color: #F3F3F3;
+  --primary-color: #C7F742;
+  --light-gray: #EAEBEC;
+}
+body{
+  background-color: #F3F3F3;
+  font-family: 'Exo 2 Regular';
+  font-size: 18px;
+}
+@font-face {
+  font-family: 'Exo 2 SemiBold';
+  src: url('/fonts/Exo2-SemiBold.ttf') format('truetype'); // ← Убрать точку!
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo 2 Regular';
+  src: url('/fonts/Exo2-Regular.ttf') format('truetype'); // ← Убрать точку!
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

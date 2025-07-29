@@ -1,0 +1,160 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<div class="main">
+
+  <div class="sidebar">
+
+    <div class="title">
+      Аналитика / Финансовые операции
+    </div>
+
+    <div class="filters">
+      
+      <div class="addTransaction" (click)="handleTransactionAction()">
+        {{isNewTransanction? 'Сохранить': 'Добавить транзакцию'}}
+      </div>
+
+      <div class="otData">
+        <div class="ot">
+          С
+        </div>
+        <div class="data">
+          21.06.2025
+        </div>
+
+      </div>
+
+      <div class="doData">
+        <div class="do">
+          ПО
+        </div>
+
+        <div class="data">
+          22.06.2025
+        </div>
+      </div>
+
+      <div class="see">
+      Показать
+      </div>
+
+    </div>
+
+    <div class="export">
+
+      <div class="pdf">
+        <img src="/pdf-icon.png" alt=""> PDF
+      </div>
+
+      <div class="excel">
+        <img src="/excel-icon.png" alt=""> Excel
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="middle">
+    <table>
+      <thead>
+        <tr>
+          <th class="item">Дата <img src="/arrows-icon.png" alt="" (click)="sortBy('date')"></th>
+          <th class="item">IZI ID <img src="/arrows-icon.png" alt="" (click)="sortBy('id')"></th>
+          <th class="item">Телефон <img src="/arrows-icon.png" alt="" (click)="sortBy('phone')"></th>
+          <th class="item">№ Документа <img src="/arrows-icon.png" alt="" (click)="sortBy('documentNumber')"></th>
+          <th class="item">Статья платежа <img src="/arrows-icon.png" alt="" (click)="sortBy('paymentArticle')"></th>
+          <th class="item prime-left">Сумма <img src="/arrows-icon.png" alt="" (click)="sortBy('amount')"></th>
+          <th class="item">Автор <img src="/arrows-icon.png" alt="" (click)="sortBy('author')"></th>
+          <th class="item middle-left">Касса <img src="/arrows-icon.png" alt="" (click)="sortBy('cashType')"></th>
+          <th class="item">Баланс <img src="/arrows-icon.png" alt="" (click)="sortBy('balanceType')"></th>
+          <th class="item middle-left">Dock <img src="/arrows-icon.png" alt=""></th>
+          <th class="item">Комментарий <img src="/arrows-icon.png" alt=""></th>
+        </tr>
+      </thead>
+      <tbody>
+        @if(isNewTransanction){
+          <tr [formGroup]="newTransictionFormGroup" class="specialy">
+            <td><input type="date" formControlName="date"></td>
+            <td><input type="text" formControlName="id"></td>
+            <td><input type="text" formControlName="phone"></td>
+            <td><input type="text" formControlName="documentNumber"></td>
+            <td><input type="text" formControlName="paymentArticle"></td>
+            <td class="prime-left"><input type="number" formControlName="amount"></td>
+            <td><input type="text" formControlName="author"></td>
+            <td class="middle-left">
+              <select formControlName="cashType">
+                <option value="Нал.">Нал.</option>
+                <option value="БНал.">БНал.</option>
+              </select>
+            </td>
+            <td>
+              <select formControlName="balanceType">
+                <option value="Игровой">Игровой</option>
+                <option value="Бонусный">Бонусный</option>
+              </select>
+            </td>
+            <td class="middle-left">Link</td>
+            <td><input type="text" formControlName="comments"></td>
+          </tr>
+        }
+
+        @if(filterdUsers){
+          @for(user of filterdUsers[nowIndex]; track user.id){
+            <tr>
+              <td>{{ user.date | date:'dd/MM/yyyy &#160; hh:mm'}}</td>
+              <td>{{ user.id }}</td>
+              <td>{{ user.phone }}</td>
+              <td>{{ user.documentNumber }}</td>
+              <td>{{ user.paymentArticle }}</td>
+              <td class="prime-left">{{ `${user.amount} ₽`}}</td>
+              <td>{{ user.author }}</td>
+              <td class="middle-left">{{ user.cashType }}</td>
+              <td>{{ user.balanceType }}</td>
+              <td class="middle-left">Link</td>
+              <td>--</td>
+            </tr>
+          }
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+
+    <div class="number-of-pages">
+    1 - {{filterdUsers?.length}} ({{allUsers?.length}})
+    </div>
+    <div class="left-icons">
+      <div class="two-left-icons" (click)="endLeft()">
+        <img src="/left-icon.png" alt=""> <img src="/left-icon.png" alt="">
+      </div>
+      <div class="one-left-icons" (click)="oneLeft()">
+        <img src="/left-icon.png" alt="">
+      </div>
+    </div>
+    <div class="pages">
+      @for (page of filterdUsers; track $index) {
+        <div class="page {{nowIndex === $index? 'primary' : ''}}" (click)="pageSelection($index)" >
+          {{$index + 1}}
+        </div>
+
+      }
+    </div>
+    <div class="right-icons">
+      <div class="one-right-icons"  (click)="oneRight()">
+        <img src="/right-icon.png" alt="">
+      </div>
+      <div class="two-right-icons"  (click)="endRight()">
+        <img src="/right-icon.png" alt=""> <img src="/right-icon.png" alt="">
+      </div>
+    </div>
+    <div class="number-of-entries">
+
+    </div>
+
+  </div>
+
+
+</div>
