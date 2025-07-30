@@ -9,32 +9,32 @@
     </div>
 
     <div class="filters">
-      
+
       <div class="addTransaction" (click)="handleTransactionAction()">
-        {{isNewTransanction? 'Сохранить': 'Добавить транзакцию'}}
+        {{isNewTransanction? 'Сохранить транзакцию': 'Добавить транзакцию'}}
       </div>
 
-      <div class="otData">
+      <div class="otData" [formGroup]="newTransictionFormGroup">
         <div class="ot">
           С
         </div>
         <div class="data">
-          21.06.2025
+          <input type="date" formControlName="dateFromControl">
         </div>
 
       </div>
 
-      <div class="doData">
+      <div class="doData" [formGroup]="newTransictionFormGroup">
         <div class="do">
           ПО
         </div>
 
         <div class="data">
-          22.06.2025
+          <input type="date" formControlName="dateToControl">
         </div>
       </div>
 
-      <div class="see">
+      <div class="see" (click)="filterByDateRange()">
       Показать
       </div>
 
@@ -42,11 +42,11 @@
 
     <div class="export">
 
-      <div class="pdf">
+      <div class="pdf" (click)="exportToPDF()">
         <img src="/pdf-icon.png" alt=""> PDF
       </div>
 
-      <div class="excel">
+      <div class="excel" (click)="exportToExcel()">
         <img src="/excel-icon.png" alt=""> Excel
       </div>
 

@@ -21,12 +21,21 @@
     flex-direction: row;
     gap: 5px;
     color: var(--gray-color);
+    input{
+      width: 130px;
+      color: var(--gray-color);
+      border: none;
+      font-family: 'Exo 2 Regular';
+    }
 
     .addTransaction {
       padding: 8px 17px 8px 17px;
       background-color: var(--primary-color);
       border-radius: 10px;
       color: var(--dark-color);
+    }
+    .addTransaction:hover {
+      border: 1px solid var(--dark-color);
     }
 
     .otData {
@@ -37,6 +46,9 @@
       flex-direction: row;
       gap: 10px;
     }
+    .otData:hover{
+      border: 1px solid var(--dark-color);
+    }
 
     .doData {
       padding: 8px 17px 8px 17px;
@@ -46,6 +58,9 @@
       flex-direction: row;
       gap: 10px;
     }
+    .doData:hover{
+      border: 1px solid var(--dark-color);
+    }
 
     .see {
       padding: 8px 17px 8px 17px;
@@ -53,6 +68,10 @@
       border-radius: 10px;
       color: var(--light-color);
     }
+    .see:hover{
+      border: 1px solid var(--dark-color);
+    }
+
   }
 
   .export {
@@ -69,11 +88,19 @@
     .pdf {
       padding: 8px 17px 8px 17px;
       background-color: var(--light-gray);
+      border-radius: 10px;
+    }
+    .pdf:hover{
+      border: 1px solid var(--dark-color);
     }
 
     .excel {
       padding: 8px 17px 8px 17px;
       background-color: var(--light-gray);
+      border-radius: 10px;
+    }
+    .excel:hover{
+      border: 1px solid var(--dark-color);
     }
   }
 

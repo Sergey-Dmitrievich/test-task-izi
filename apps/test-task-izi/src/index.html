@@ -6,8 +6,57 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Водяные знаки через мета-теги -->
+    <meta name="author" content="Скворцов СД" />
+    <meta name="copyright" content="© 2025 Скворцов СД. All rights reserved" />
+    <meta name="description" content="Test task for " />
+    <meta name="project-id" content="TT-2025-138hs35" />
+    <meta name="creation-date" content="30.07.2025" />
+
+    <!-- Дополнительные скрытые метаданные -->
+    <meta name="x-watermark" content="sergejskvorcov122@mail.ru-30.07.2025-" />
+    <meta name="x-signature" content="SHA256:7f83b1657ff1fc53b92dc18148a1d65dfc2d4b1fa3d677284addd200126d9069" />
+
+    <!-- Dublin Core метаданные для лучшей идентификации -->
+    <meta name="DC.Creator" content="Скворцов СД" />
+    <meta name="DC.Rights" content="Proprietary - Test Task Only" />
+    <meta name="DC.Date" content="30.07.2025" />
+
+    <!-- Скрытый комментарий с информацией об авторстве -->
+    <!--
+      @author: Скворцов СД
+      @email: sergejskvorcov122@mail.ru
+      @date: 0.07.2025
+      @purpose: Test task for
+      @uid: 138hs35
+
+      COPYRIGHT NOTICE:
+      This code is proprietary and created exclusively for evaluation purposes.
+      Any unauthorized use, reproduction, or distribution is strictly prohibited.
+    -->
   </head>
   <body>
+    <!-- Скрытый div с метаданными (не отображается) -->
+    <div style="display:none" data-watermark="[ваша-подпись]" data-author="[ваше-имя]" data-created="2025-12"></div>
+
     <app-root></app-root>
+
+    <!-- Дополнительный скрытый script с метками -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "author": {
+        "@type": "Person",
+        "name": "Скворцов СД",
+        "email": "[ваш email]"
+      },
+      "copyrightYear": "2025",
+      "copyrightHolder": "Скворцов СД",
+      "license": "Proprietary - Evaluation Only",
+      "identifier": "TT-2025-[hash]"
+    }
+    </script>
   </body>
 </html>
